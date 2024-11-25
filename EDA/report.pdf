@@ -1,0 +1,286 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "d76280f0",
+   "metadata": {},
+   "source": [
+    "# INTRODUCTION"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f502c34b",
+   "metadata": {},
+   "source": [
+    "In this report, I am to explore the trends in appointments and MH infusion rates over time. By using time series regression, the goal is to study patterns and uncover insights that help us better understand the dynamics of these appointments. This analysis is crucial in identifyinh changes, pinpointing areas of concern and informing decision-making. \n",
+    "\n",
+    "I undertook the following steps; \n",
+    "\n",
+    "1. **Data Preparation:** I carefully organized and cleaned the data to ensure accuracy and consistency. \n",
+    "2. **Trend Analysis:**\n",
+    "\n",
+    "- Examined the overall trends of all appointments.\n",
+    "- Focused on successful appointments involving MH infusions within Cambridge. \n",
+    "- Compared the Cambridge MH infusion rates trend with successfull MH infusion appointments outside Cambridge. \n",
+    "\n",
+    "After analyzing these trends, the next step is to identify the underlying factors that may influence the observed patterns, particularly the significant drop in MH infusions within Cambridge. This will include a comparative analysis with other locations and an investigation into potential changes that occured during mid-2023. The findings will form the foundation for actionable strategies to address these trends.  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d34d3013",
+   "metadata": {},
+   "source": [
+    "# Explanatory Data Analysis"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cc8fe467",
+   "metadata": {},
+   "source": [
+    "## Data Wrangling "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4b237a32",
+   "metadata": {},
+   "source": [
+    "Just for a brief introduction, data wrangling is the process of transforming raw data into a structured organized format that is ready for analysis. Also referred to as **data cleaning**. \n",
+    "\n",
+    "In this analysis, the data wrangling process included the following steps; \n",
+    "1. **Dropped irrelevant records:** \n",
+    "The records that contained information that was not relevant for the current analysis were dropped. In this case, there was a record with the appointments dates from the year 2000 since they fell outside the scope of this study. \n",
+    "2. **Standardized Appointment Categories(Labels):**\n",
+    "The appointment status were standardized to make them consistent and meaningful. Specifically:\n",
+    "- Appointments marked as \"Made\" were renamed to \"Seen\"\n",
+    "- Appointments marked as \"Deleted\" were renamed to \"Cancelled\". \n",
+    "3. **Selected Relevant Columns** \n",
+    "To prepare the data for time series regression, we identified and retained only the columns necessary for this analysis; \"Date of Service\" and \"Appointment UID\". Any records with missing values from the selected columns were removed to ensure the accuracy of the analysis. \n",
+    "4. **Aggregated Data by Date:**\n",
+    "Finally, the total number of appointments was calculated by grouping the data by date. This allowed us to create a daily summary of all appointments, which serves as the foundation for analyzing trends over time. \n",
+    "\n",
+    "The data was therefore ready for the next phase of analysis which is time series regression. More data wrangling will be performed based on the status of the analysis. \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b0a91a2e",
+   "metadata": {},
+   "source": [
+    "## Time Series Regression\n",
+    "### Regression Analysis"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "336e1f83",
+   "metadata": {},
+   "source": [
+    "![image](/home/the-ape/CurrentProjects/upwork/CambridgeBiotherapies/infusion-volume-analysis/images/regression_line.png)\n",
+    "\n",
+    "This was done to refine the analysis and find the details of the appointments over time. Like:\n",
+    "\n",
+    "* Calculate seasonal trends\n",
+    "* Visualize the annual cycles \n",
+    "* Visualize the daily fluctuations in the number of appointments \n",
+    "\n",
+    "### Time series Decompisition "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "28d51fd1",
+   "metadata": {},
+   "source": [
+    "![](../images/decomposed.png)\n",
+    "\n",
+    "Findings;\n",
+    "\n",
+    "* There is an upward trend of the daily number of appointments\n",
+    "* daily fluctuations of the number of appointments range from 0 to 25"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2e047dd4",
+   "metadata": {},
+   "source": [
+    "### Moving Average\n",
+    "\n",
+    "Lets smoothen the curves by calculating 7-day, 30-day and 90-day moving averages. Just to make it clear, moing average is a statistical method used to smooth time series data by calculating the average of data points over a fixed time period. For instance, our case the 7-day moving average calculates the average of the moost recent 7 days' values and continuously updates as new data points are added. This technique redices noise and highlights the underlying trends or patterns in the data, making it easier to interpret. \n",
+    "\n",
+    "As said before, the goal of this analysis is to find out, why and when did the successful appointments that involved MH infusion rates have gone down therefore calculating moving averages is essential because; \n",
+    "\n",
+    "1. **It smoothens the daily fluctuations:** Daily appointment data can be noisy and moving average smoothens these fluctuations, enabling us to focus on the overall trend rather than short-term spikes or drops. \n",
+    "2. **Camparing trends:** by using different time windows(7, 30, 90 days), we can examine short-term, medium term and long-term trends providing holistic view of the data. \n",
+    "\n",
+    "These are steps that were taken; \n",
+    "\n",
+    "- Calculated 7, 30, 90 day moving averages  to highlight weekly, monthly and quarterly patterns in appointment counts and MH infusion rates. \n",
+    "- Covered multiple metrics; total daily appointments, MH infusion appointments in Cambridge and outside Cambridge. \n",
+    "\n",
+    "The moving averages were plotted alongside the raw data whereby;\n",
+    "\n",
+    "* the raw data was in lightblue for the daily rates(appointments, MH infusions) and displayed in the background to provide context\n",
+    "* the smoothed trends(7, 30, 90 day moving averages) were overlaid in distinct blue tones for clarity. \n",
+    "\n",
+    "I will provide the results of the visualizations later but here is what the charts helped me to reveal; \n",
+    "- Consistent trends across different time windows, with shorter windows showing more detailed changes. \n",
+    "- Difference in patters and any unusual drops or increases in appointments or infusion rates. \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3232f05d",
+   "metadata": {},
+   "source": [
+    "#### Overall Daily Appointment Rates\n",
+    "\n",
+    "![](../images/daily_appointments.png)\n",
+    "\n",
+    "Here is what was discovered after analyzing daily appointment rates; \n",
+    "\n",
+    "- The daily appointment count has a general upward trend over the years. \n",
+    "- There are peaks and troughs(seasonality) recurring annually. This could be due to holidays and seasonal events. \n",
+    "\n",
+    "Insights; \n",
+    "\n",
+    "- The number of appointments are growing steadily over time. Need to find the factos that increase the appointment rate. \n",
+    "\n",
+    "Lets focus on successfull MH infusion rates over the years!"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "052d9155",
+   "metadata": {},
+   "source": [
+    "#### Successful MH Infusion in Cambridge\n",
+    "I will narrow down to the successfull appointments with MH Infusion at cambridge all time and visualize the trend. \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "32e7343a",
+   "metadata": {},
+   "source": [
+    "First I prepared the data by: \n",
+    "\n",
+    "* Filtering to get the appointments that were successful, involved MH infusion and were held in the Cambridge facility. \n",
+    "* Dropped the first record that had an appointment held in the year 2000 which was irrelevant in the analysis(this might be an error during data collection)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "712956ae",
+   "metadata": {},
+   "source": [
+    "![](../images/cambridge_MH_success_after_2023.png)\n",
+    "\n",
+    "From the analysis of the number of daily appointments that involved MH infusion in the camridge facility, it is evident; \n",
+    "\n",
+    "* There is a general rise in the number of appointments from the year 2018 to early 2023\n",
+    "* After mid-2023, the number of appointments start to experience a drop."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "62ac4022",
+   "metadata": {},
+   "source": [
+    "#### Successful MH infusion appointments outside Cambridge"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "11f884fe",
+   "metadata": {},
+   "source": [
+    "I will put all other facilities from the other locations other than Cambridge, analyze the successfull appointments that involve MH infusion and see how they compare with Camdrige. This is what I will do; \n",
+    "\n",
+    "* Filter out Cambridge facilities. \n",
+    "* Get the successfull appointments that involve MH infusion \n",
+    "* Clean and organize the data as required "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3010a981",
+   "metadata": {},
+   "source": [
+    "![](../images/other_mh_success.png)\n",
+    "\n",
+    "The chart aboves shows that; \n",
+    "\n",
+    "- There rate of successful MH infusions rose over the years and stagnated after mid-2023.\n",
+    "- There are generally less MH infusion rates outside Cambridge than in Cambridge. \n",
+    "\n",
+    "Insights; \n",
+    "\n",
+    "* More marketing is required to bring in more clients for MH infusion. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "03c36afe",
+   "metadata": {},
+   "source": [
+    "### Successfull MH Infusion - mid 2023 onwards\n",
+    "Since there has been a drop in MH infusion from mid 2023 to 2024 in Cambridge Facility, we will explore the data from 2023 and find where did the fall exactly begin. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b9d406aa",
+   "metadata": {},
+   "source": [
+    "![](../images/cambridge_MH_success_after_2023.png)\n",
+    "\n",
+    "The steady fall of successfull appointments that involved MH infusion started exactly on January, 2024. The next goal is to find what really affected the appointment rate. \n",
+    "\n",
+    "Find the difference between; before mid-2023, mid-2023 to the end year(Where it stagnated), start of 2024 to present(where it falls)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a3fcc130",
+   "metadata": {},
+   "source": [
+    "# Conclusion"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "57ddc5cb",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
