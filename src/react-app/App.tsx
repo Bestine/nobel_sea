@@ -8,7 +8,7 @@ import Contact from "@/react-app/pages/Contact";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/nobel_sea/">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/marketplace" element={<Marketplace />} />

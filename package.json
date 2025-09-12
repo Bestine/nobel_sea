@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Bestine.github.io/nobel_sea",
   "name": "mocha-app",
   "private": true,
   "version": "0.0.0",
@@ -15,8 +16,8 @@
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.12.0",
     "@eslint/js": "9.25.1",
-    "@getmocha/vite-plugins": "latest",
     "@getmocha/users-service": "^0.0.4",
+    "@getmocha/vite-plugins": "latest",
     "@types/node": "22.14.1",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
@@ -25,6 +26,7 @@
     "eslint": "9.25.1",
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-react-refresh": "0.4.19",
+    "gh-pages": "^6.3.0",
     "globals": "15.15.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
@@ -34,6 +36,9 @@
     "wrangler": "^4.33.0"
   },
   "scripts": {
+    "start": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc -b && vite build",
     "cf-typegen": "wrangler types",
     "check": "tsc && vite build && wrangler deploy --dry-run",
