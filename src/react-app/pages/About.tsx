@@ -28,7 +28,7 @@ export default function About() {
     {
       name: "Dr. Bestine Okinda",
       role: "Machine Learning & Research Specialist",
-      image: "assets/images/bestine-okinda.jpg",
+      image: "/assets/images/bestine-okinda.jpg",
       bio: "Marine engineer and conservation expert leading our research initiatives and sustainable tourism programs. PhD in Marine Ecology.",
       specialties: ["Marine Biology", "Conservation Research", "Sustainable Tourism"]
     }
