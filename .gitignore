@@ -166,3 +166,10 @@ data/
 
 # Memos
 memos.txt
+
+# Motch defined dependencies
+dist/
+node_modules/
+.wrangler/
+.dev.vars
+worker-configuration.d.ts
