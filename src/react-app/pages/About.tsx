@@ -27,9 +27,9 @@ export default function About() {
     },
     {
       name: "Dr. Bestine Okinda",
-      role: "Marine Conservation Scientist",
-      image: "https://images.unsplash.com/photo-1494790108755-2616c6d07077?auto=format&fit=crop&w=400&q=80",
-      bio: "Marine biologist and conservation expert leading our research initiatives and sustainable tourism programs. PhD in Marine Ecology.",
+      role: "Machine Learning & Research Specialist",
+      image: "assets/images/bestine-okinda.jpg",
+      bio: "Marine engineer and conservation expert leading our research initiatives and sustainable tourism programs. PhD in Marine Ecology.",
       specialties: ["Marine Biology", "Conservation Research", "Sustainable Tourism"]
     }
   ];
