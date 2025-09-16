@@ -138,7 +138,7 @@ export default function Footer() {
                   className="text-blue-100"
                   style={{ fontFamily: 'Book Antiqua, serif' }}
                 >
-                  +255 XXX XXX XXX
+                  +254 707 494 278
                 </p>
               </div>
             </div>

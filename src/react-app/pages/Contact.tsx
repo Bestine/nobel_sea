@@ -19,7 +19,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+254 XXX XXX XXX", "+254 XXX XXX XXX", "WhatsApp Available"],
+      details: ["+254 707 494 278", "+254 721 880 015", "WhatsApp Available"],
       color: "from-purple-500 to-purple-600"
     },
     {

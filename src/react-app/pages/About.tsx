@@ -12,7 +12,7 @@ export default function About() {
       specialties: ["Drone Technology", "AI Development", "Marine Research"]
     },
     {
-      name: "Hamisi Bakari Ambra Mjumbe",
+      name: "Hamisi Bakari",
       role: "Community Engagement Director",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
       bio: "Dedicated to empowering coastal communities and building sustainable partnerships. Bridging the gap between conservation and community development.",
@@ -26,7 +26,7 @@ export default function About() {
       specialties: ["Environmental Programs", "Sustainable Tourism", "Marine Ecosystem Management"]
     },
     {
-      name: "Dr. Bestine Okinda",
+      name: "Bestine Okinda",
       role: "Machine Learning & Research Specialist",
       image: "/assets/images/bestine-okinda.jpg",
       bio: "Marine engineer and conservation expert leading our research initiatives and sustainable tourism programs. PhD in Marine Ecology.",
