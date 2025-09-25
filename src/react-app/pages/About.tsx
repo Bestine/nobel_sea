@@ -28,7 +28,7 @@ export default function About() {
     {
       name: "Bestine Okinda",
       role: "Machine Learning & Research Specialist",
-      image: "https://github.com/Bestine/nobel_sea/blob/main/public/assets/images/white-BestineOkinda.png?auto=format&fit=crop&w=400&q=80",
+      image: "https://raw.githubusercontent.com/Bestine/nobel_sea/refs/heads/main/public/assets/images/white-BestineOkinda.png?auto=format&fit=crop&w=400&q=80",
       bio: "Marine engineer and conservation expert leading our research initiatives and sustainable tourism programs. PhD in Marine Ecology.",
       specialties: ["Marine Biology", "Conservation Research", "Sustainable Tourism"]
     }

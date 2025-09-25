@@ -17,7 +17,7 @@ export default function Marketplace() {
       id: 2,
       name: "Coral Wall Art",
       price: "$85",
-      image: "https://unsplash.com/photos/a-modern-hallway-displays-colorful-art-6HfFnR5jepY?auto=format&fit=crop&w=500&q=80",
+      image: "https://images.unsplash.com/photo-1584444707186-b7831c11014f?auto=format&fit=crop&w=500&q=80",
       description: "Stunning wall décor inspired by coral reefs, made from recycled materials",
       rating: 4.8,
       category: "Wall Décor"
