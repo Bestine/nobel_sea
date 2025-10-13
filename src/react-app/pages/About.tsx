@@ -31,6 +31,13 @@ export default function About() {
       image: "https://raw.githubusercontent.com/Bestine/nobel_sea/refs/heads/main/public/assets/images/white-BestineOkinda.png?auto=format&fit=crop&w=400&q=80",
       bio: "Marine engineer and conservation expert leading our research initiatives and sustainable tourism programs. PhD in Marine Ecology.",
       specialties: ["Marine Biology", "Conservation Research", "Sustainable Tourism"]
+    },
+    {
+      name: "Salim Bwanamwaka",
+      role: "Branding & Product Design Lead",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      bio: "Responsible on how we package our product to tourists along the East African coast. Expert in branding and user experience design, all concepts of packaging.",
+      specialties: ["Branding", "Product Design", "User Experience"]
     }
   ];
 
