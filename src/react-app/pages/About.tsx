@@ -6,38 +6,38 @@ export default function About() {
   const teamMembers = [
     {
       name: "Athuman Masoud",
-      role: "Technology & Innovation Lead",
+      role: "Strategic $ Operations Lead",
       image: "https://raw.githubusercontent.com/Bestine/nobel_sea/refs/heads/main/public/assets/images/athman.jpeg?auto=format&fit=crop&w=400&q=80",
-      bio: "Leading our technological initiatives including drone mapping, AI systems, and marine research technology. Passionate about using innovation to protect our oceans.",
-      specialties: ["Drone Technology", "AI Development", "Marine Research"]
+      bio: "Oversees execution of company activities, coordinates field operations, optimizes workflows, and aligns teams with strategy and timelines. Ensures smooth rollout of MVP, pilots, cleanup programs, and community initiatives.",
+      specialties: ["Operations Management", "Strategy Execution", "Project Coordination"]
     },
     {
       name: "Hamisi Bakari",
-      role: "Community Engagement Director",
+      role: "Finance & Budgeting Lead",
       image: "https://images.unsplash.com/phot-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
-      bio: "Dedicated to empowering coastal communities and building sustainable partnerships. Bridging the gap between conservation and community development.",
-      specialties: ["Community Outreach", "Sustainable Development", "Local Partnerships"]
+      bio: "Manages financial planning, budgeting, and cost control. Oversees accounting, projections, and grant or investor fund allocation to ensure sustainability, transparency, and smart use of resources for each phase of growth.",
+      specialties: ["Financial Planning", "Budgeting", "Cost Management"]
     },
     {
       name: "Ambra Mjumbe",
-      role: "Sustainability Programs Manager",
+      role: "Corporate Relations & Partnerships Lead",
       image: "https://raw.githubusercontent.com/Bestine/nobel_sea/refs/heads/main/public/assets/images/ambra.jpeg?auto=format&fit=crop&w=400&q=80",
-      bio: "Coordinating environmental programs and sustainable tourism initiatives across the East African coast. Expert in marine ecosystem preservation and community-based conservation projects.",
-      specialties: ["Environmental Programs", "Sustainable Tourism", "Marine Ecosystem Management"]
+      bio: "Develops strategic partnerships, secures MOUs, manages investor and stakeholder relations, and expands corporate networks. Represents the company with institutions, NGOs, hotels, and government bodies to grow Nobel Sea’s ecosystem and influence.",
+      specialties: ["Partnerships", "Investor Relations", "Investor Outreach", "Stakeholder Engagement"]
     },
     {
       name: "Bestine Okinda",
       role: "Machine Learning & Research Specialist",
       image: "https://raw.githubusercontent.com/Bestine/nobel_sea/refs/heads/main/public/assets/images/white-BestineOkinda.png?auto=format&fit=crop&w=400&q=80",
-      bio: "Marine engineer and conservation expert leading our research initiatives and sustainable tourism programs. PhD in Marine Ecology.",
-      specialties: ["Marine Biology", "Conservation Research", "Sustainable Tourism"]
+      bio: "Leads AI development, drone mapping models, and research initiatives. Builds data pipelines, trains agents, and prototypes intelligent systems that power cleanup, mapping, sustainable tourism, and analytics for informed decision-making",
+      specialties: ["AI Development", "Data Collection", "Drone Mapping"]
     },
     {
       name: "Salim Bwanamwaka",
       role: "Branding & Product Design Lead",
       image: "https://raw.githubusercontent.com/Bestine/nobel_sea/refs/heads/main/public/assets/images/salim.jpeg?auto=format&fit=crop&w=400&q=80",
-      bio: "Responsible on how we package our product to tourists along the East African coast. Expert in branding and user experience design, all concepts of packaging.",
-      specialties: ["Branding", "Product Design", "User Experience"]
+      bio: "Shapes brand identity, designs product experience, and ensures visual consistency across digital and physical touchpoints. Guides creative campaigns, marketplace branding, eco-product design, and user experience elements that attract tourists and partners.",
+      specialties: ["Brand Design", "Product Design", "Creative Direction"]
     }
   ];
 
