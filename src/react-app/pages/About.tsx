@@ -5,7 +5,7 @@ import { Users, Heart, Globe, Target, Waves, MapPin } from 'lucide-react';
 export default function About() {
   const teamMembers = [
     {
-      name: "Athuman Masoud",
+      name: "Athman Masudi",
       role: "Strategic $ Operations Lead",
       image: "https://raw.githubusercontent.com/Bestine/nobel_sea/refs/heads/main/public/assets/images/athman.jpeg?auto=format&fit=crop&w=400&q=80",
       bio: "Oversees execution of company activities, coordinates field operations, optimizes workflows, and aligns teams with strategy and timelines. Ensures smooth rollout of MVP, pilots, cleanup programs, and community initiatives.",
@@ -14,7 +14,7 @@ export default function About() {
     {
       name: "Hamisi Bakari",
       role: "Finance & Budgeting Lead",
-      image: "https://images.unsplash.com/phot-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+      image: "https://raw.githubusercontent.com/Bestine/nobel_sea/refs/heads/main/public/assets/images/hamisi.jpeg?auto=format&fit=crop&w=400&q=80",
       bio: "Manages financial planning, budgeting, and cost control. Oversees accounting, projections, and grant or investor fund allocation to ensure sustainability, transparency, and smart use of resources for each phase of growth.",
       specialties: ["Financial Planning", "Budgeting", "Cost Management"]
     },
